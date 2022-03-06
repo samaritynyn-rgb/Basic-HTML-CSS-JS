@@ -1,0 +1,382 @@
+@media (max-width: 1024px) {
+  .hero__link-btn {
+    margin-bottom: 110px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+  }
+
+  .picture__wrap {
+    align-items: center;
+  }
+
+  .edge__icon {
+    display: block;
+  }
+
+  .edge__desq {
+    margin-top: 12px;
+    max-width: 210px;
+  }
+
+  .edge__contant {
+    max-width: 450px;
+    margin-left: 90px;
+  }
+
+  .teacher__card-content {
+    max-width: 330px;
+  }
+
+  .modules-style {
+    max-width: 330px;
+  }
+
+  .card__time {
+    left: 228px;
+  }
+
+  .teacher-wrap-wrap {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 690px;
+  }
+
+  .header {
+    padding-bottom: 26px;
+  }
+
+  .hero__paragraph {
+    margin-top: 14px;
+  }
+
+  .picture__wrap {
+    margin-top: 74px;
+  }
+
+  .hero-br {
+    display: none;
+  }
+
+  .edge {
+    padding-bottom: 76px;
+  }
+
+  .edge__texture {
+    height: 210px;
+  }
+
+  .edge__wrap-two {
+    margin-top: 0;
+  }
+
+  .edge__contant {
+    margin-left: 80px;
+  }
+
+  .edge__desq {
+    margin-top: 10px;
+  }
+
+  .teacher {
+    padding-top: 70px;
+  }
+
+  .teacher-wrap {
+    margin-top: 22px;
+  }
+
+  .modules {
+    margin-top: 52px;
+  }
+
+  .card__content {
+    min-height: 282px;
+  }
+
+  .card__ad {
+    max-width: 270px;
+    margin-top: 4px;
+  }
+
+  .card__btn {
+    left: 28px;
+    bottom: 34px;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .footer__top {
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: 720px) {
+  .header__content {
+    flex-direction: column;
+  }
+
+  .header__logo {
+    margin-right: 0;
+  }
+
+  .header__menu {
+    margin-top: 30px;
+  }
+
+  .hero__content {
+    padding-top: 180px;
+  }
+
+  .hero__cub {
+    display: none;
+  }
+
+  .edge__contant {
+    margin-left: 46px;
+    max-width: 330px;
+  }
+
+  .edge__wrap {
+    align-items: flex-start;
+  }
+
+  .teacher__card-content {
+    max-width: 240px;
+  }
+
+  .modules-style {
+    max-width: 240px;
+  }
+
+  .card__content {
+    min-height: 376px;
+    padding-top: 26px;
+  }
+
+  .card__time {
+    left: 130px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 510px;
+  }
+
+  .header {
+    padding-bottom: 34px;
+  }
+
+  .hero__content {
+    padding-top: 210px;
+  }
+
+  .hero__paragraph {
+    min-width: 345px;
+  }
+
+  .edge__contant {
+    margin-left: 20px;
+  }
+
+  .edge__wrap-two {
+    margin-top: 0;
+  }
+
+  .edge__desq {
+    margin-top: 8px;
+  }
+
+  .teacher {
+    padding-top: 52px;
+  }
+
+  .modules {
+    margin-top: 76px;
+  }
+
+  .card__content {
+    min-height: 376px;
+    padding-top: 26px;
+  }
+
+  .card__time {
+    left: 140px;
+  }
+
+  .card__btn {
+    left: 30px;
+    bottom: 26px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .footer__top {
+    margin-top: 52px;
+  }
+}
+
+@media (max-width: 575px) {
+  .header__menu {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header__content {
+    flex-direction: row;
+  }
+
+  .hero__title {
+    font-size: 30px;
+  }
+
+  .hero__paragraph {
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .hero__link-btn {
+    padding: 20px 53px 20px 53px;
+  }
+
+  .edge__texture {
+    display: none;
+  }
+
+  .edge__contant {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .edge__icon {
+    display: flex;
+  }
+
+  .edge__icon:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .edge__desq {
+    margin-top: 0;
+    max-width: 180px;
+  }
+
+  .modules-style {
+    max-width: 290px;
+  }
+
+  .card__time {
+    left: 180px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    max-width: 290px;
+  }
+
+  .header {
+    padding-bottom: 30px;
+  }
+
+  .header__burger {
+    top: -8px;
+  }
+
+  .hero__fon {
+    background: url("../img/hero_min.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 0;
+    max-height: 433px;
+  }
+
+  .hero__content {
+    padding-top: 130px;
+  }
+
+  .hero__paragraph {
+    margin-top: 4px;
+    max-width: 290px;
+  }
+
+  .hero__link-btn {
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 53px;
+    padding-right: 53px;
+    margin-top: 46px;
+  }
+
+  .edge {
+    padding-top: 48px;
+    padding-bottom: 50px;
+  }
+
+  .edge__cuption {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  .edge-br {
+    display: none;
+  }
+
+  .edge-reset {
+    width: 110px;
+  }
+
+  .edge__paragraph {
+    margin-top: 2px;
+  }
+
+  .teacher {
+    padding-top: 46px;
+  }
+
+  .teacher-name {
+    margin-top: 26px;
+  }
+
+  .teacher__caption {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .modules {
+    margin-top: 16px;
+  }
+
+  .modules__cuption {
+    font-size: 20px;
+  }
+
+  .card__content {
+    padding-top: 28px;
+  }
+
+  .card__desqr {
+    line-height: 130%;
+  }
+
+  .card__btn {
+    left: 30;
+    bottom: 28px;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .footer__top {
+    margin-top: 50px;
+  }
+}
