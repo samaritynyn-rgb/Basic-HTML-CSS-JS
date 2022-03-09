@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>knowledge-base</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,regular,500" rel="stylesheet" />
+	<link rel="stylesheet" href="css/simplebar.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<section class="main">
+
+			<div class="main__check-list">
+				<h2>Категории:</h2>
+				<label class="main__check main__option">
+					<input type="checkbox" class="main__input">
+					<span class="main__check-box"></span>
+					Динозавры
+				</label>
+				<label class="main__check main__option">
+					<input type="checkbox" class="main__input">
+					<span class="main__check-box"></span>
+					Медведи
+				</label>
+				<label class="main__check main__option">
+					<input type="checkbox" class="main__input">
+					<span class="main__check-box"></span>
+					Косули
+				</label>
+				<label class="main__check main__option">
+					<input type="checkbox" class="main__input">
+					<span class="main__check-box"></span>
+					Лисы
+				</label>
+				<label class="main__check main__option">
+					<input type="checkbox" class="main__input">
+					<span class="main__check-box"></span>
+					Волки
+				</label>
+				<label class="main__check main__option">
+					<input type="checkbox" class="main__input">
+					<span class="main__check-box"></span>
+					Олени и лоси
+				</label>
+			</div>
+
+			<div class="main__wrapper-scroll">
+				<div class="main__custom-scroll" data-simplebar>
+					Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь
+					активно
+					развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы
+					вынуждены
+					отталкиваться
+					от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент
+					проверки
+					глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные
+					участники
+					технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные
+					выводы,
+					разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое
+					развитие,
+					а также
+					свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+				</div>
+			</div>
+
+			<div id="map" style="width: 460px; height: 460px"></div>
+			<script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
+			<script>
+				// Функция ymaps.ready() будет вызвана, когда
+				// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+				ymaps.ready(init);
+
+				function init() {
+					// Создание карты.
+					var myMap = new ymaps.Map("map", {
+						// Координаты центра карты.
+						// Порядок по умолчанию: «широта, долгота».
+						// Чтобы не определять координаты центра карты вручную,
+						// воспользуйтесь инструментом Определение координат.
+						center: [48.872185073737896, 2.354223999999991],
+						// Уровень масштабирования. Допустимые значения:
+						// от 0 (весь мир) до 19.
+						zoom: 17,
+						//Скрыть элементы управления
+						controls: []
+
+					});
+
+					// Создание геообъекта с типом точка (метка).
+					var myGeoObject = new ymaps.GeoObject({
+						geometry: {
+							type: "Point", // тип геометрии - точка
+							coordinates: [48.872185073737896, 2.354223999999991] // координаты точки
+						}
+					});
+
+					var myPlacemark = new ymaps.Placemark([48.872185073737896, 2.354223999999991], {}, {
+						iconLayout: 'default#image',
+						iconImageHref: 'img/marker.svg',
+						iconImageSize: [28, 40],
+						iconImageOffset: [-3, -42]
+					});
+
+					// Размещение геообъекта на карте.
+					//myMap.geoObjects.add(myGeoObject);
+					myMap.geoObjects.add(myPlacemark);
+				}
+			</script>
+			<script src="js/simplebar.js"></script>
+
+			<form action="#" id="form" autocomplete="off" class="form">
+				<label for="name" class="main__form-label">Как вас зовут?</label>
+				<input type="text" class="form__input form-control" placeholder="Имя*" autocomplete="off" name="name"
+					id="name" data-validate-field="name" />
+
+				<label for="tel" class="main__form-label">Укажите ваш телефон</label>
+				<input name="tel" type="tel" placeholder="Телефон*" data-validate-field="tel" data-validate-rules="phone"
+					id="tel" class="form__input form-control">
+
+				<label for="email" class="main__form-label">Укажите ваш e-mail</label>
+				<input type="email" class="form__input form-control" placeholder="E-mail*" autocomplete="off" name="email"
+					id="email" data-validate-field="mail" />
+
+				<button class="btn btn-primary" id="submit-btn">Заказать</button>
+			</form>
+
+			<script src="js/just-validate.min.js"></script>
+			<script src="js/inputmask.min.js"></script>
+			<script>
+				var selector = document.querySelector("input[type='tel']");
+				var im = new Inputmask("+7 (999)-999-99-99");
+				im.mask(selector);
+
+				new window.JustValidate('.form', {
+					rules: {
+						name: {
+							required: true,
+							minLength: 2,
+							maxLength: 20,
+						},
+						tel: {
+							required: true,
+							function: (name, value) => {
+								const phone = selector.inputmask.unmaskedvalue()
+								return Number(phone) && phone.length === 10
+							}
+						},
+						mail: {
+							required: true,
+							email: true,
+						},
+					},
+				});
+			</script>
+		</section>
+
+		<div class="path">
+			<div class="tooltip__wrapper">
+				Следует отметить, что<br>социально-экономическое развитие способствует повышению качества
+				переосмысления<br>
+				внешнеэкономических политик.
+				<div class="main__tooltip-wrapper">
+					<div class="main__tooltip" tabindex="0"><svg width="16" height="16" viewbox="0 0 16 16" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8 3C7.33333 3 7 3.31919 7 3.95758C7 4.60026 7.33333 4.92159 8 4.92159C8.33333 4.92159 8.58233 4.83805 8.74699 4.67095C8.91566 4.49957 9 4.26178 9 3.95758C9 3.31919 8.66667 3 8 3ZM7.07831 13H8.91566V5.81491H7.07831V13Z"
+								fill="#BCBCBC" />
+						</svg></div>
+					<div class="popup-wrapper">
+						<div class="main__tooltip-popup">Глава 2, страница 176</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main__custom-select">
+				<button class="main__button" tabindex="0">Материал</button>
+				<ul class="main__button-list">
+					<li class="main__button-item" data-value="1">Древесина</li>
+					<li class="main__button-item" data-value="2">Металл</li>
+					<li class="main__button-item" data-value="3">Камень</li>
+					<li class="main__button-item" data-value="4">Пластик</li>
+					<li class="main__button-item" data-value="5">Композитный</li>
+					<li class="main__button-item" data-value="6">Гипс</li>
+				</ul>
+				<input type="text" name="select" value="" class="main__input-hidden">
+			</div>
+
+		</div>
+	</div>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
