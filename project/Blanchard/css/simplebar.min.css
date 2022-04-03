@@ -1,0 +1,301 @@
+[data-simplebar] {
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+.simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+.simplebar-offset {
+  direction: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.simplebar-content-wrapper {
+  direction: inherit;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.simplebar-content:after,
+.simplebar-content:before {
+  content: " ";
+  display: table;
+}
+.simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+.simplebar-height-auto-observer-wrapper {
+  box-sizing: inherit !important;
+  height: 100%;
+  width: 100%;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  flex-grow: inherit;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+.simplebar-height-auto-observer {
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+[data-simplebar].simplebar-dragging .simplebar-content {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+[data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+.simplebar-scrollbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 10px;
+}
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: #000;
+  border-radius: 7px;
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 0.5;
+  transition: opacity 0s linear;
+}
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+}
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  height: 100%;
+  left: 2px;
+  right: 2px;
+}
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 2px;
+  height: 7px;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+.hs-dummy-scrollbar-size {
+  direction: rtl;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  height: 500px;
+  width: 500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.simplebar-hide-scrollbar {
+  position: fixed;
+  left: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/*                                 simplebar                          */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.simplebar-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 300px;
+  padding: 40px;
+}
+.simplebar {
+  height: 260px;
+  padding-right: 20px;
+}
+.simplebar__item {
+  min-height: 40px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.simplebar__item-link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 32px;
+  color: var(--color-white);
+}
+
+.simplebar__item-tin {
+  background-image: url("../img/tin.jpg");
+}
+.simplebar__item-fri {
+  background-image: url("../img/fri.jpg");
+}
+.simplebar__item-leo {
+  background-image: url("../img/leo.jpg");
+}
+.simplebar__item-ver {
+  background-image: url("../img/ver.jpg");
+}
+.simplebar__item-mon {
+  background-image: url("../img/mon.jpg");
+}
+.simplebar__item-sis {
+  background-image: url("../img/sis.jpg");
+}
+.simplebar__item-man {
+  background-image: url("../img/man.jpg");
+}
+.simplebar__item-ren {
+  background-image: url("../img/ren.jpg");
+}
+.simplebar__item-van {
+  background-image: url("../img/van.jpg");
+}
+.simplebar__item-sez {
+  background-image: url("../img/sez.jpg");
+}
+.simplebar__item-gog {
+  background-image: url("../img/gog.jpg");
+}
+.simplebar__item-ser {
+  background-image: url("../img/ser.jpg");
+}
+.simplebar__item-kan {
+  background-image: url("../img/kan.jpg");
+}
+.simplebar__item-mar {
+  background-image: url("../img/mar.jpg");
+}
+.simplebar__item-mal {
+  background-image: url("../img/mal.jpg");
+}
+.simplebar__item-pic {
+  background-image: url("../img/pic.jpg");
+}
+.simplebar__item-kar {
+  background-image: url("../img/kar.jpg");
+}
+.simplebar__item-pra {
+  background-image: url("../img/pra.jpg");
+}
+.simplebar__item-sev {
+  background-image: url("../img/sev.jpg");
+}
+.simplebar__item-bal {
+  background-image: url("../img/sev.jpg");
+}
+
+.simplebar__item:last-child {
+  margin-bottom: 0px;
+}
+
+.simplebar .simplebar-track.simplebar-vertical {
+  background-color: var(--color-black-black);
+  width: 2px;
+}
+
+.simplebar .simplebar-scrollbar {
+  width: 2px;
+  background-color: var(--color-white);
+}
