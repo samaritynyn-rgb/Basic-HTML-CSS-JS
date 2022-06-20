@@ -72,6 +72,13 @@ menuBtn.addEventListener('click', function () {
 	menu.classList.toggle('active');
 })
 
+let menuLink = document.querySelector('.header__burger-menu-list');
+menuLink.addEventListener('click', function () {
+	menu.classList.toggle('active');
+	menuBtn.classList.toggle('active');
+})
+
+
 //gallery__slider-------------------------------------------------------------------------------------------------------------
 new Swiper('.gallery__swiper', {
 	slidesPerView: 3,
@@ -86,6 +93,28 @@ new Swiper('.gallery__swiper', {
 		prevEl: '#gallery-button-prev',
 	},
 	allowTouchMove: true,
+	breakpoints: {
+
+		1560: {
+			slidesPerView: 3,
+			spaceBetween: 20
+		},
+		1024: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			slidesPerGroup: 2,
+		},
+		630: {
+			slidesPerView: 2,
+			spaceBetween: 38,
+			slidesPerGroup: 2,
+		},
+		0: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		},
+	}
+
 });
 
 //-----------------------------------------------------------------------------------------------------select------------------------
@@ -170,6 +199,24 @@ new Swiper('.event__swiper', {
 		type: 'bullets',
 		clickable: true,
 	},
+	breakpoints: {
+		1025: {
+			slidesPerView: 3,
+			slidesPerGroup: 2,
+			spaceBetween: 50,
+		},
+		510: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 34,
+		},
+		0: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		}
+
+	}
+
 });
 //----------------------------------------------------------------------------project__slider
 new Swiper('.project__swiper', {
@@ -181,4 +228,27 @@ new Swiper('.project__swiper', {
 		nextEl: '#project-button-next',
 		prevEl: '#project-button-prev',
 	},
+	breakpoints: {
+
+		1460: {
+			slidesPerView: 3,
+			spaceBetween: 20
+		},
+		1024: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			slidesPerGroup: 2,
+		},
+
+		700: {
+			slidesPerView: 2,
+			spaceBetween: 12,
+			slidesPerGroup: 1,
+		},
+
+		0: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		}
+	}
 });
