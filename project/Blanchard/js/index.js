@@ -35,19 +35,20 @@ document.querySelectorAll(".simplebar").forEach(item => {
 	});
 })
 
-tippy('.tippy', {
-	duration: 1000,
+/*tooltip*/
+tippy('.projects__tooltep-1', {
+	content: "Пример современных тенденций - современная методология разработки",
 	maxWidth: 264,
 });
 
-tippy('#tool1', {
-	content: 'Пример современных тенденций - современная методология разработки',
+tippy('.projects__tooltep-2', {
+	content: "Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции",
+	maxWidth: 264,
 });
-tippy('#tool2', {
-	content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают вас эмоции',
-});
-tippy('#tool3', {
-	content: 'В стремлении повысить качество',
+
+tippy('.projects__tooltep-3', {
+	content: "В стремлении повысить качество",
+	maxWidth: 264,
 });
 
 //--------------------------------------------------------------------------ymaps
@@ -67,10 +68,8 @@ function init() {
 		// от 0 (весь мир) до 19.
 		zoom: 14,
 		//Скрыть элементы управления
-
 		//controls: []
 	});
-
 	myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
 		hintContent: 'Шоурум №4 Леонтьевский переулок, дом 5/1',
 		balloonContent: 'Шоурум №4 Леонтьевский переулок, дом 5/1'
@@ -80,9 +79,6 @@ function init() {
 		iconImageSize: [20, 20],
 		iconImageOffset: [-5, -38]
 	});
-
-
-
 	// Размещение геообъекта на карте.
 	//myMap.geoObjects.add(myGeoObject);
 	myMap.geoObjects.add(myPlacemark);
@@ -127,12 +123,10 @@ function init() {
 $(document).ready(function () {
 	$("#tel").mask("+7 (999) 99-99-999");
 });
-
 $(document).ready(function () {
 	$("#validate-form").validate({
 		errorClass: "error fail-alert",
 		validClass: "valid success-alert",
-
 		rules: {
 			name: {
 				required: true,

@@ -14,19 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
 					el.classList.remove('header__bottom-menu-btn--active');
 				}
 			});
-
 			drops.forEach(el => {
 				if (el !== drop) {
 					el.classList.remove('dropdown--active');
 				}
 			});
-
 			drop.classList.toggle('dropdown--active');
 			currentBtn.classList.toggle('header__bottom-menu-btn--active')
-
 		});
 	});
-
 	document.addEventListener('click', (e) => {
 		if (!e.target.closest('.header__bottom-menu')) {
 			menuBtns.forEach(el => {
@@ -36,31 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			drops.forEach(el => {
 				el.classList.remove('dropdown--active');
 			});
-
 		}
 	});
 });
-
 //-------------------------------------------------------------------------------------------------------------------------
 let headBtn = document.querySelector('.header__search-button');
 let searchMenu = document.querySelector('.form__dec');
-
 let closeBtn = document.querySelector('.btn__close');
 let closeMenu = document.querySelector('.form__dec');
-
-
 headBtn.addEventListener('click', function () {
 	searchMenu.classList.add('form__dec--active');
 });
-
 headBtn.addEventListener('click', function () {
 	headBtn.classList.toggle('header__button--reset');
 });
-
 closeBtn.addEventListener('click', function () {
 	closeMenu.classList.remove('form__dec--active')
 });
-
 closeBtn.addEventListener('click', function () {
 	headBtn.classList.remove('header__button--reset')
 });
@@ -71,19 +59,16 @@ menuBtn.addEventListener('click', function () {
 	menuBtn.classList.toggle('active');
 	menu.classList.toggle('active');
 })
-
 let menuLink = document.querySelector('.header__burger-menu-list');
 menuLink.addEventListener('click', function () {
 	menu.classList.toggle('active');
 	menuBtn.classList.toggle('active');
 })
-
-
 //gallery__slider-------------------------------------------------------------------------------------------------------------
 new Swiper('.gallery__swiper', {
 	slidesPerView: 3,
 	slidesPerGroup: 3,
-	spaceBetween: 56,
+	spaceBetween: 50,
 	pagination: {
 		el: '#gallery-pagination',
 		type: 'fraction',
@@ -94,7 +79,6 @@ new Swiper('.gallery__swiper', {
 	},
 	allowTouchMove: true,
 	breakpoints: {
-
 		1560: {
 			slidesPerView: 3,
 			spaceBetween: 20
@@ -114,21 +98,17 @@ new Swiper('.gallery__swiper', {
 			slidesPerGroup: 1,
 		},
 	}
-
 });
-
-//-----------------------------------------------------------------------------------------------------select------------------------
+//-----------------------------------------------------------select------------------------
 const mainBtn = document.querySelector('.main__button');
 const mainBtnList = document.querySelector('.main__button-list');
 const mainBtnItem = mainBtnList.querySelectorAll('.main__button-item');
 const mainInput = document.querySelector('.main__input-hidden');
-
 //Клик по кнопке. Открыть/Закрыть select
 mainBtn.addEventListener('click', function () {
 	mainBtnList.classList.toggle('main__button-list--visible')
 	this.classList.add('main__button--active');
 });
-
 //Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
 mainBtnItem.forEach(function (listItem) {
 	listItem.addEventListener('click', function (event) {
@@ -139,7 +119,6 @@ mainBtnItem.forEach(function (listItem) {
 		mainBtnList.classList.remove('main__button-list--visible');
 	})
 });
-
 //Клик снаружи дропдауна - закрыть дропдаун
 document.addEventListener('click', function (event) {
 	if (event.target !== document.querySelector('.main__button')) {
@@ -147,7 +126,6 @@ document.addEventListener('click', function (event) {
 		mainBtnList.classList.remove('main__button-list--visible');
 	}
 });
-
 //Нажатие на Tab или Escape. Заклыть Дропдаун
 document.addEventListener('keydown', function (e) {
 	if (e.key === 'Tab' || e.key === 'Escape') {
@@ -155,7 +133,6 @@ document.addEventListener('keydown', function (e) {
 		mainBtnList.classList.remove('main__button-list--visible');
 	}
 });
-
 //----------------------------------------------------------------------------------------------accordion
 $(function () {
 	$("#accordion").accordion({
@@ -168,7 +145,6 @@ $(function () {
 		active: 0
 	});
 });
-
 //----------------------------------------------------------------------------------------------catalog-tabs
 document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll('.catalog__grid-btn').forEach(function (tabsBtn) {
@@ -183,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 })
-
 //----------------------------------------------------------------------------event__slider
 new Swiper('.event__swiper', {
 	slidesPerView: 3,
@@ -200,7 +175,7 @@ new Swiper('.event__swiper', {
 		clickable: true,
 	},
 	breakpoints: {
-		1025: {
+		1024: {
 			slidesPerView: 3,
 			slidesPerGroup: 2,
 			spaceBetween: 50,
@@ -214,9 +189,7 @@ new Swiper('.event__swiper', {
 			slidesPerView: 1,
 			slidesPerGroup: 1,
 		}
-
 	}
-
 });
 //----------------------------------------------------------------------------project__slider
 new Swiper('.project__swiper', {
@@ -229,7 +202,6 @@ new Swiper('.project__swiper', {
 		prevEl: '#project-button-prev',
 	},
 	breakpoints: {
-
 		1460: {
 			slidesPerView: 3,
 			spaceBetween: 20
