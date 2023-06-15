@@ -1,3 +1,59 @@
+const menuBurger = document.querySelector('.menu__burger');
+if (menuBurger) {
+	const menuHeader = document.querySelector('.menu__header');
+	menuBurger.addEventListener("click", function (e) {
+		document.body.classList.toggle('_lock');
+		menuBurger.classList.toggle('_active');
+		menuHeader.classList.toggle('_active');
+	});
+}
+
+let headBtn = document.querySelector('.header__search-button');
+let searchMenu = document.querySelector('.form__dec');
+let closeBtn = document.querySelector('.btn__close');
+let closeMenu = document.querySelector('.form__dec');
+let searchWrap = document.querySelector('.header__search-wrap');
+let reset = document.querySelector('.header__logo');
+let resetBurger = document.querySelector('.menu__burger');
+let resetPlag = document.querySelector('.plag')
+
+headBtn.addEventListener('click', function () {
+	searchWrap.classList.add('un');
+});
+closeBtn.addEventListener('click', function () {
+	searchWrap.classList.remove('un')
+});
+headBtn.addEventListener('click', function () {
+	reset.classList.add('reset');
+});
+closeBtn.addEventListener('click', function () {
+	reset.classList.remove('reset')
+});
+headBtn.addEventListener('click', function () {
+	resetBurger.classList.add('reset-burger');
+});
+closeBtn.addEventListener('click', function () {
+	resetBurger.classList.remove('reset-burger')
+});
+headBtn.addEventListener('click', function () {
+	resetPlag.classList.add('plag--lock');
+});
+closeBtn.addEventListener('click', function () {
+	resetPlag.classList.remove('plag--lock')
+});
+headBtn.addEventListener('click', function () {
+	searchMenu.classList.add('form__dec--active');
+});
+headBtn.addEventListener('click', function () {
+	headBtn.classList.toggle('header__button--reset');
+});
+closeBtn.addEventListener('click', function () {
+	closeMenu.classList.remove('form__dec--active')
+});
+closeBtn.addEventListener('click', function () {
+	headBtn.classList.remove('header__button--reset')
+});
+
 //----------------------------------------------------------------------------------------------------dropdown-header
 document.addEventListener('DOMContentLoaded', () => {
 	//1. по клику на пункты верхнего меню открывать дропдаун
@@ -35,70 +91,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
-//-------------------------------------------------------------------------------------------------------------------------
-let headBtn = document.querySelector('.header__search-button');
-let searchMenu = document.querySelector('.form__dec');
-let closeBtn = document.querySelector('.btn__close');
-let closeMenu = document.querySelector('.form__dec');
-headBtn.addEventListener('click', function () {
-	searchMenu.classList.add('form__dec--active');
+
+//SimpleBar - header-bottom
+new SimpleBar(document.querySelector(".simplebar"), {
+	/* чтобы изначально ползунок был виден */
+	autoHide: false,
+	/* с помощью этого значения вы можете управлять высотой ползунка*/
+	scrollbarMaxSize: 25,
 });
-headBtn.addEventListener('click', function () {
-	headBtn.classList.toggle('header__button--reset');
-});
-closeBtn.addEventListener('click', function () {
-	closeMenu.classList.remove('form__dec--active')
-});
-closeBtn.addEventListener('click', function () {
-	headBtn.classList.remove('header__button--reset')
-});
-//-----------------------------------------------------burger----------------------------------------------------------------
-let menuBtn = document.querySelector('.header__burger-btn');
-let menu = document.querySelector('.header__burger-menu');
-menuBtn.addEventListener('click', function () {
-	menuBtn.classList.toggle('active');
-	menu.classList.toggle('active');
+document.querySelectorAll(".simplebar").forEach(item => {
+	new SimpleBar(item, {
+		/* чтобы изначально ползунок был виден */
+		autoHide: false,
+		/* с помощью этого значения вы можете управлять высотой ползунка*/
+		scrollbarMaxSize: 25,
+	});
 })
-let menuLink = document.querySelector('.header__burger-menu-list');
-menuLink.addEventListener('click', function () {
-	menu.classList.toggle('active');
-	menuBtn.classList.toggle('active');
-})
-//gallery__slider-------------------------------------------------------------------------------------------------------------
-new Swiper('.gallery__swiper', {
-	slidesPerView: 3,
-	slidesPerGroup: 3,
-	spaceBetween: 50,
-	pagination: {
-		el: '#gallery-pagination',
-		type: 'fraction',
-	},
-	navigation: {
-		nextEl: '#gallery-button-next',
-		prevEl: '#gallery-button-prev',
-	},
-	allowTouchMove: true,
-	breakpoints: {
-		1560: {
-			slidesPerView: 3,
-			spaceBetween: 20
-		},
-		1024: {
-			slidesPerView: 2,
-			spaceBetween: 20,
-			slidesPerGroup: 2,
-		},
-		630: {
-			slidesPerView: 2,
-			spaceBetween: 38,
-			slidesPerGroup: 2,
-		},
-		0: {
-			slidesPerView: 1,
-			slidesPerGroup: 1,
-		},
-	}
-});
+
 //-----------------------------------------------------------select------------------------
 const mainBtn = document.querySelector('.main__button');
 const mainBtnList = document.querySelector('.main__button-list');
@@ -110,15 +119,15 @@ mainBtn.addEventListener('click', function () {
 	this.classList.add('main__button--active');
 });
 //Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
-mainBtnItem.forEach(function (listItem) {
-	listItem.addEventListener('click', function (event) {
-		event.stopImmediatePropagation();
-		mainBtn.innerText = this.innerText;
-		mainBtn.focus()
-		mainInput.value = this.dataset.value;
-		mainBtnList.classList.remove('main__button-list--visible');
-	})
-});
+// mainBtnItem.forEach(function (listItem) {
+// 	listItem.addEventListener('click', function (event) {
+// 		event.stopImmediatePropagation();
+// 		mainBtn.innerText = this.innerText;
+// 		mainBtn.focus()
+// 		mainInput.value = this.dataset.value;
+// 		mainBtnList.classList.remove('main__button-list--visible');
+// 	})
+// });
 //Клик снаружи дропдауна - закрыть дропдаун
 document.addEventListener('click', function (event) {
 	if (event.target !== document.querySelector('.main__button')) {
@@ -133,6 +142,21 @@ document.addEventListener('keydown', function (e) {
 		mainBtnList.classList.remove('main__button-list--visible');
 	}
 });
+
+let isSelect = document.querySelector('.main__button-item');
+let isSelectSel = document.querySelector('.main__button-item1');
+let isSel = document.querySelector('.selected');
+let isSelOne = document.querySelector('.selected1');
+
+
+isSelectSel.addEventListener('click', function () {
+	isSelOne.classList.add('is-selected');
+});
+isSelect.addEventListener('click', function () {
+	isSel.classList.add('is-selected');
+});
+
+
 //----------------------------------------------------------------------------------------------accordion
 $(function () {
 	$("#accordion").accordion({
@@ -159,68 +183,136 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 })
-//----------------------------------------------------------------------------event__slider
-new Swiper('.event__swiper', {
-	slidesPerView: 3,
-	slidesPerGroup: 1,
-	initialSlide: 0,
-	spaceBetween: 50,
-	navigation: {
-		nextEl: '#event-button-next',
-		prevEl: '#event-button-prev',
-	},
-	pagination: {
-		el: '#event-pagination',
-		type: 'bullets',
-		clickable: true,
-	},
-	breakpoints: {
-		1024: {
-			slidesPerView: 3,
-			slidesPerGroup: 2,
-			spaceBetween: 50,
-		},
-		510: {
-			slidesPerView: 2,
-			slidesPerGroup: 2,
-			spaceBetween: 34,
-		},
-		0: {
-			slidesPerView: 1,
-			slidesPerGroup: 1,
-		}
-	}
-});
-//----------------------------------------------------------------------------project__slider
-new Swiper('.project__swiper', {
-	slidesPerView: 3,
-	slidesPerGroup: 3,
-	spaceBetween: 50,
-	loop: true,
-	navigation: {
-		nextEl: '#project-button-next',
-		prevEl: '#project-button-prev',
-	},
-	breakpoints: {
-		1460: {
-			slidesPerView: 3,
-			spaceBetween: 20
-		},
-		1024: {
-			slidesPerView: 2,
-			spaceBetween: 20,
-			slidesPerGroup: 2,
-		},
 
-		700: {
-			slidesPerView: 2,
-			spaceBetween: 12,
-			slidesPerGroup: 1,
-		},
-
-		0: {
-			slidesPerView: 1,
-			slidesPerGroup: 1,
-		}
-	}
+/*tooltip*/
+tippy('.projects__tooltep-1', {
+	content: "Пример современных тенденций - современная методология разработки",
+	maxWidth: 264,
 });
+
+tippy('.projects__tooltep-2', {
+	content: "Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции",
+	maxWidth: 264,
+});
+
+tippy('.projects__tooltep-3', {
+	content: "В стремлении повысить качество",
+	maxWidth: 264,
+});
+
+//--------------------------------------------------------------------------ymaps
+// Функция ymaps.ready() будет вызвана, когда
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+ymaps.ready(init);
+
+function init() {
+	// Создание карты.
+	var myMap = new ymaps.Map("map", {
+		// Координаты центра карты.
+		// Порядок по умолчанию: «широта, долгота».
+		// Чтобы не определять координаты центра карты вручную,
+		// воспользуйтесь инструментом Определение координат.
+		center: [55.758468, 37.601088],
+		// Уровень масштабирования. Допустимые значения:
+		// от 0 (весь мир) до 19.
+		zoom: 14,
+		//Скрыть элементы управления
+		//controls: []
+	});
+	myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+		hintContent: 'Шоурум №4 Леонтьевский переулок, дом 5/1',
+		balloonContent: 'Шоурум №4 Леонтьевский переулок, дом 5/1'
+	}, {
+		iconLayout: 'default#image',
+		iconImageHref: 'img/local.svg',
+		iconImageSize: [20, 20],
+		iconImageOffset: [-5, -38]
+	});
+	// Размещение геообъекта на карте.
+	//myMap.geoObjects.add(myGeoObject);
+	myMap.geoObjects.add(myPlacemark);
+	//отключаем зум колёсиком мышки
+	myMap.behaviors.disable('scrollZoom');
+	//Элементы управления
+	//кнопка разворачивания карты на весь экран control.FullscreenControl;
+	myMap.controls.remove('fullscreenControl');
+	//кнопка определения местоположения пользователя control.GeolocationControl;
+	myMap.controls.add('geolocationControl');
+	//кнопка включения и отключения поведения "редактор маршрута"control.RouteEditor;
+	myMap.controls.remove('routeEditor');
+	//кнопка включения и отключения поведения "линейка"control.RulerControl;
+	myMap.controls.remove('rulerControl');
+	//поисковая строка control.SearchControl.
+	myMap.controls.remove('searchControl');
+	//панель пробок control.TrafficControl;
+	myMap.controls.remove('trafficControl');
+	//панель переключения типа карты control.TypeSelector;
+	myMap.controls.remove('typeSelector');
+	//ползунок масштаба control.ZoomControl;
+	//myMap.controls.add('zoomControl');
+	myMap.controls.add('zoomControl', {
+		size: 'small',
+		float: 'none',
+		position: {
+			bottom: '50px',
+			right: '30px'
+		}
+	});
+	//панель для построения маршрутов control.RouteButton,
+	myMap.controls.remove('routePanelControl');
+	//панель маршрутизации control.RoutePanel.
+	//на мобильных устройствах... (проверяем по userAgent браузера)
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		//... отключаем перетаскивание карты
+		myMap.behaviors.disable('drag');
+	}
+}
+
+//-------------------------------------------------------form
+$(document).ready(function () {
+	$("#tel").mask("+7 (999) 99-99-999");
+});
+$(document).ready(function () {
+	$("#validate-form").validate({
+		errorClass: "error fail-alert",
+		validClass: "valid success-alert",
+		rules: {
+			name: {
+				required: true,
+				minlength: 3,
+			},
+			tel: {
+				required: true,
+			},
+		},
+		messages: {
+			name: {
+				minlength: "Имя 3 символа и более",
+				required: "Недопустимый формат",
+			},
+			tel: {
+				required: "Недопустимый формат",
+			}
+		}
+	});
+});
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+	anchor.addEventListener("click", function (event) {
+		event.preventDefault();
+		const blockID = anchor.getAttribute('href')
+		document.querySelector('' + blockID).scrollIntoView({
+			behavior: "smooth",
+			block: "start"
+		})
+	})
+}
+
+
+
+
+
+
+

@@ -355,9 +355,20 @@
   margin-bottom: 0px;
 }
 
+.simplebar-hidden {
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  background-color: transparent;
+}
+
 .simplebar .simplebar-track.simplebar-vertical {
   background-color: var(--color-black-black);
   width: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  height: 0;
 }
 
 .simplebar .simplebar-scrollbar {

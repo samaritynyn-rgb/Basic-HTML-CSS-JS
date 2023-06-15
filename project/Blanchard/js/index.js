@@ -1,4 +1,4 @@
-//swiper - baner
+//---------------------------------------------------- hero-swiper
 const swiper = new Swiper('.hero__swiper', {
 	// Default parameters
 	slidesPerView: 1,
@@ -19,131 +19,140 @@ const swiper = new Swiper('.hero__swiper', {
 	//}
 })
 
-//SimpleBar - header
-new SimpleBar(document.querySelector(".simplebar"), {
-	/* чтобы изначально ползунок был виден */
-	autoHide: false,
-	/* с помощью этого значения вы можете управлять высотой ползунка*/
-	scrollbarMaxSize: 25,
-});
-document.querySelectorAll(".simplebar").forEach(item => {
-	new SimpleBar(item, {
-		/* чтобы изначально ползунок был виден */
-		autoHide: false,
-		/* с помощью этого значения вы можете управлять высотой ползунка*/
-		scrollbarMaxSize: 25,
-	});
-})
 
-/*tooltip*/
-tippy('.projects__tooltep-1', {
-	content: "Пример современных тенденций - современная методология разработки",
-	maxWidth: 264,
-});
+//-------------------------------------------------------gallery__slider
 
-tippy('.projects__tooltep-2', {
-	content: "Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции",
-	maxWidth: 264,
-});
 
-tippy('.projects__tooltep-3', {
-	content: "В стремлении повысить качество",
-	maxWidth: 264,
-});
-
-//--------------------------------------------------------------------------ymaps
-// Функция ymaps.ready() будет вызвана, когда
-// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-ymaps.ready(init);
-
-function init() {
-	// Создание карты.
-	var myMap = new ymaps.Map("map", {
-		// Координаты центра карты.
-		// Порядок по умолчанию: «широта, долгота».
-		// Чтобы не определять координаты центра карты вручную,
-		// воспользуйтесь инструментом Определение координат.
-		center: [55.758468, 37.601088],
-		// Уровень масштабирования. Допустимые значения:
-		// от 0 (весь мир) до 19.
-		zoom: 14,
-		//Скрыть элементы управления
-		//controls: []
-	});
-	myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-		hintContent: 'Шоурум №4 Леонтьевский переулок, дом 5/1',
-		balloonContent: 'Шоурум №4 Леонтьевский переулок, дом 5/1'
-	}, {
-		iconLayout: 'default#image',
-		iconImageHref: 'img/local.svg',
-		iconImageSize: [20, 20],
-		iconImageOffset: [-5, -38]
-	});
-	// Размещение геообъекта на карте.
-	//myMap.geoObjects.add(myGeoObject);
-	myMap.geoObjects.add(myPlacemark);
-	//отключаем зум колёсиком мышки
-	myMap.behaviors.disable('scrollZoom');
-	//Элементы управления
-	//кнопка разворачивания карты на весь экран control.FullscreenControl;
-	myMap.controls.remove('fullscreenControl');
-	//кнопка определения местоположения пользователя control.GeolocationControl;
-	myMap.controls.add('geolocationControl');
-	//кнопка включения и отключения поведения "редактор маршрута"control.RouteEditor;
-	myMap.controls.remove('routeEditor');
-	//кнопка включения и отключения поведения "линейка"control.RulerControl;
-	myMap.controls.remove('rulerControl');
-	//поисковая строка control.SearchControl.
-	myMap.controls.remove('searchControl');
-	//панель пробок control.TrafficControl;
-	myMap.controls.remove('trafficControl');
-	//панель переключения типа карты control.TypeSelector;
-	myMap.controls.remove('typeSelector');
-	//ползунок масштаба control.ZoomControl;
-	//myMap.controls.add('zoomControl');
-	myMap.controls.add('zoomControl', {
-		size: 'small',
-		float: 'none',
-		position: {
-			bottom: '50px',
-			right: '30px'
-		}
-	});
-	//панель для построения маршрутов control.RouteButton,
-	myMap.controls.remove('routePanelControl');
-	//панель маршрутизации control.RoutePanel.
-	//на мобильных устройствах... (проверяем по userAgent браузера)
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		//... отключаем перетаскивание карты
-		myMap.behaviors.disable('drag');
-	}
-}
-
-//-------------------------------------------------------form
-$(document).ready(function () {
-	$("#tel").mask("+7 (999) 99-99-999");
-});
-$(document).ready(function () {
-	$("#validate-form").validate({
-		errorClass: "error fail-alert",
-		validClass: "valid success-alert",
-		rules: {
-			name: {
-				required: true,
-				minlength: 3,
-			},
-			tel: {
-				required: true,
-			},
+document.addEventListener("DOMContentLoaded", () => {
+	let gallerySlider = new Swiper(".slides-container", {
+		slidesPerView: 1,
+		grid: {
+			rows: 1,
+			fill: "row"
 		},
-		messages: {
-			name: {
-				minlength: "Имя 3 символа и более",
-				required: "Недопустимый формат",
+		spaceBetween: 20,
+		pagination: {
+			el: ".gallery .test-pagination",
+			type: "fraction"
+		},
+		navigation: {
+			nextEl: ".test-next",
+			prevEl: ".test-prev"
+		},
+
+		breakpoints: {
+			441: {
+				slidesPerView: 2,
+				spaceBetween: 30
 			},
-			tel: {
-				required: "Недопустимый формат",
+
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 50
+			}
+		},
+
+		a11y: false,
+		keyboard: {
+			enabled: true,
+			onlyInViewport: true
+		}, // можно управлять с клавиатуры стрелками влево/вправо
+
+		// Дальнейшие надстройки делают слайды вне области видимости не фокусируемыми
+		watchSlidesProgress: true,
+		watchSlidesVisibility: true,
+		slideVisibleClass: "slide-visible",
+
+		on: {
+			init: function () {
+				this.slides.forEach((slide) => {
+					if (!slide.classList.contains("slide-visible")) {
+						slide.tabIndex = "-1";
+					} else {
+						slide.tabIndex = "";
+					}
+				});
+			},
+			slideChange: function () {
+				this.slides.forEach((slide) => {
+					if (!slide.classList.contains("slide-visible")) {
+						slide.tabIndex = "-1";
+					} else {
+						slide.tabIndex = "";
+					}
+				});
 			}
 		}
+
+
 	});
+});
+
+
+
+//----------------------------------------------------------------------------event__slider
+new Swiper('.event__swiper', {
+	slidesPerView: 3,
+	slidesPerGroup: 1,
+	initialSlide: 0,
+	spaceBetween: 50,
+	navigation: {
+		nextEl: '#event-button-next',
+		prevEl: '#event-button-prev',
+	},
+	pagination: {
+		el: '#event-pagination',
+		type: 'bullets',
+		clickable: true,
+	},
+	breakpoints: {
+		1024: {
+			slidesPerView: 3,
+			slidesPerGroup: 2,
+			spaceBetween: 50,
+		},
+		510: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			spaceBetween: 34,
+		},
+		0: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		}
+	}
+});
+
+//----------------------------------------------------------------------------project__slider
+new Swiper('.project__swiper', {
+	slidesPerView: 3,
+	slidesPerGroup: 3,
+	spaceBetween: 50,
+	loop: true,
+	navigation: {
+		nextEl: '#project-button-next',
+		prevEl: '#project-button-prev',
+	},
+	breakpoints: {
+		1460: {
+			slidesPerView: 3,
+			spaceBetween: 20
+		},
+		1024: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+			slidesPerGroup: 2,
+		},
+
+		700: {
+			slidesPerView: 2,
+			spaceBetween: 12,
+			slidesPerGroup: 1,
+		},
+
+		0: {
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+		}
+	}
 });
