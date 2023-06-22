@@ -68,6 +68,10 @@
 		position: absolute;
 	}
 
+	/* .reset-menu {
+		display: none;
+	} */
+
 	.header__button--reset {
 		display: none;
 	}

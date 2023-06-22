@@ -8,6 +8,18 @@ if (menuBurger) {
 	});
 }
 
+let resetMenu = document.querySelector('.header__top-link');
+let activeMenu = document.querySelector('._active');
+resetMenu.addEventListener('click', function () {
+	activeMenu.classList.remove('_active');
+});
+console.log(activeMenu);
+
+
+
+// let resetBurger = document.querySelector('.menu__burger');
+
+
 let headBtn = document.querySelector('.header__search-button');
 let searchMenu = document.querySelector('.form__dec');
 let closeBtn = document.querySelector('.btn__close');
@@ -15,7 +27,11 @@ let closeMenu = document.querySelector('.form__dec');
 let searchWrap = document.querySelector('.header__search-wrap');
 let reset = document.querySelector('.header__logo');
 let resetBurger = document.querySelector('.menu__burger');
-let resetPlag = document.querySelector('.plag')
+let resetPlag = document.querySelector('.plag');
+
+
+
+
 
 headBtn.addEventListener('click', function () {
 	searchWrap.classList.add('un');
@@ -53,6 +69,50 @@ closeBtn.addEventListener('click', function () {
 closeBtn.addEventListener('click', function () {
 	headBtn.classList.remove('header__button--reset')
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("off1").addEventListener("click", function () {
+		document.querySelector(".menu__header").classList.toggle("_active");
+		document.querySelector(".menu__burger").classList.toggle("_active");
+		document.body.classList.remove('_lock');
+	})
+})
+document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("off2").addEventListener("click", function () {
+		document.querySelector(".menu__header").classList.toggle("_active");
+		document.querySelector(".menu__burger").classList.toggle("_active");
+		document.body.classList.remove('_lock');
+	})
+})
+document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("off3").addEventListener("click", function () {
+		document.querySelector(".menu__header").classList.toggle("_active");
+		document.querySelector(".menu__burger").classList.toggle("_active");
+		document.body.classList.remove('_lock');
+	})
+})
+document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("off4").addEventListener("click", function () {
+		document.querySelector(".menu__header").classList.toggle("_active");
+		document.querySelector(".menu__burger").classList.toggle("_active");
+		document.body.classList.remove('_lock');
+	})
+})
+document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("off5").addEventListener("click", function () {
+		document.querySelector(".menu__header").classList.toggle("_active");
+		document.querySelector(".menu__burger").classList.toggle("_active");
+		document.body.classList.remove('_lock');
+	})
+})
+document.addEventListener("DOMContentLoaded", function () {
+	document.getElementById("off6").addEventListener("click", function () {
+		document.querySelector(".menu__header").classList.toggle("_active");
+		document.querySelector(".menu__burger").classList.toggle("_active");
+		document.body.classList.remove('_lock');
+	})
+})
+
 
 //----------------------------------------------------------------------------------------------------dropdown-header
 document.addEventListener('DOMContentLoaded', () => {
