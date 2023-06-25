@@ -66,6 +66,8 @@
 	.un {
 		display: block;
 		position: absolute;
+		visibility: visible;
+		opacity: 1;
 	}
 
 	/* .reset-menu {
@@ -240,9 +242,7 @@
 		max-width: 668px;
 	}
 
-	.un {
-		width: 100%;
-	}
+
 
 	.reset {
 		display: none;
@@ -253,6 +253,11 @@
 	}
 
 	.header__search-wrap {
+		position: absolute;
+	}
+
+	.un {
+		width: 100%;
 		position: relative;
 	}
 
