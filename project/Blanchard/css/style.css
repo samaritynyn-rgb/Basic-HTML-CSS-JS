@@ -645,7 +645,10 @@ p {
   border-radius: 100px;
   padding: 22px 22px 20px 35px;
   color: var(--color-white);
+  transition: .3s all;
 }
+
+
 
 .hero__btn:focus-visible:not(:hover):not(:active) {
   outline: 2px solid var(--violet);
@@ -855,6 +858,7 @@ p {
   color: var(--color-white);
   cursor: pointer;
   z-index: 1;
+  transition: .4s;
 }
 
 .main__button:focus-visible {
@@ -898,8 +902,6 @@ p {
 }
 
 .main__button-list {
-
-
   top: 40px;
   left: 0;
   width: 100%;
@@ -923,6 +925,7 @@ p {
   padding-left: 13px;
   padding-bottom: 4px;
   opacity: 0.6;
+  transition: .4s;
 }
 
 .main__button-item:hover {
@@ -1095,15 +1098,28 @@ p {
   padding-top: 20px;
   padding-bottom: 14px;
   margin-top: -1px;
+  transition: .4s;
 }
+
+.catalog__item-top .catalog__item-caption {
+  transition: .4s;
+}
+
+
 
 .catalog__item-btn {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  transition-property: transform;
-  transition: 0.2s ease-in-out;
+
 }
+
+.catalog__item-btn svg {
+  transition: transform .4s ease-in-out;
+}
+
+
+
 
 .catalog__item-list:active .catalog__item-btn svg {
   transform: rotate(180deg);
