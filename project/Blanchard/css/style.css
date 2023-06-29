@@ -1491,7 +1491,7 @@ p {
   transform: rotate(-46deg);
 } */
 
-.event__slider-btn:focus {
+#event-button-next:focus {
   background-color: var(--whiteViolet);
   outline: #7943a4 1px solid;
 }
