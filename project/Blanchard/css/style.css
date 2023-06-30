@@ -898,6 +898,7 @@ p {
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
+  transition: .4s;
   pointer-events: none;
 }
 
@@ -1700,11 +1701,13 @@ p {
   border: 1px solid var(--color-grey-white);
   height: 150px;
   max-width: 450px;
+  transition: .4s;
 }
 
 .project__swiper-link:hover picture .project__swiper-img {
   filter: grayscale(0);
   opacity: 1;
+  transition: .4s;
 }
 
 .project__swiper-link:focus-visible {
@@ -1724,23 +1727,76 @@ p {
   width: 100%;
 }
 
-#project-button-prev {
-  width: 30px;
-  height: 30px;
-  top: 56%;
-  left: 0;
-}
-
-#project-button-next {
-  width: 30px;
-  height: 30px;
-  top: 56%;
+.project-next-btn {
+  position: absolute;
+  top: 50%;
   right: 0;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #ECECEC;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .4s;
+  outline: #ECECEC;
+
 }
 
-#project-button-next:hover svg,
-#project-button-prev:hover svg {
-  fill: var(--whiteViolet);
+#project-button-next::before {
+  left: calc(50% - 10px / 2);
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+#project-button-next::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px / 2);
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: all .4s linear;
+
+}
+
+.project-prev-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #ECECEC;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .4s;
+  outline: #ECECEC;
+}
+
+#project-button-prev::before {
+  left: calc(50% - 10px / 2);
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+#project-button-prev::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px / 2);
+  width: 10px;
+  height: 10px;
+  transform: rotate(-136deg);
+  transform-origin: center;
+  transition: all .4s linear;
+
+}
+
+#project-button-next:hover,
+#project-button-prev:hover {
+  background-color: var(--whiteViolet);
 }
 
 #project-button-next,
@@ -1748,7 +1804,7 @@ p {
   outline: none;
 }
 
-#project-button-next:focus:not(:hover):not(:active) svg,
+/* #project-button-next:focus:not(:hover):not(:active) svg,
 #project-button-prev:focus:not(:hover):not(:active) svg {
   stroke: var(--BlueViolet);
 }
@@ -1757,6 +1813,17 @@ p {
 #project-button-prev:focus:active svg {
   fill: var(--whiteViolet);
   stroke: var(--darkVioler);
+} */
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none;
+}
+
+#project-button-next.swiper-button-disabled,
+#project-button-prev.swiper-button-disabled {
+  opacity: 0;
+  cursor: auto;
 }
 
 /*-----------------------------------------------section-contacts-------------------------------------------*/
@@ -1799,6 +1866,7 @@ p {
   border-radius: 30px;
   height: auto;
   cursor: pointer;
+  transition: .4s;
 }
 
 .contacts__form-input:hover:not(:active) {
@@ -1847,6 +1915,7 @@ input.valid.success-alert {
   background-color: transparent;
   border-radius: 30px;
   cursor: pointer;
+  transition: .4s;
 }
 
 .contacts__form-btn1 {
@@ -1894,6 +1963,10 @@ input.valid.success-alert {
 
 .contacts__connection-item:not(:last-child) {
   margin-right: 20px;
+}
+
+.contacts__connection-link {
+  transition: .4s;
 }
 
 .contacts__connection-link:focus-visible {
@@ -1944,6 +2017,10 @@ input.valid.success-alert {
 
 .footer__item-link {
   background-color: transparent;
+}
+
+.footer__item-link svg path {
+  transition: .4s;
 }
 
 .footer__item-link:hover {

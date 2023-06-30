@@ -128,7 +128,7 @@ new Swiper('.project__swiper', {
 	slidesPerView: 3,
 	slidesPerGroup: 3,
 	spaceBetween: 50,
-	loop: true,
+	loop: false,
 	navigation: {
 		nextEl: '#project-button-next',
 		prevEl: '#project-button-prev',
