@@ -584,12 +584,13 @@ p {
   width: 100%;
   position: relative;
   overflow: hidden;
+  word-wrap: break-word;
 }
 
-.hero__container {
+/* .hero__container {
   padding-top: 238px;
   padding-bottom: 120px;
-}
+} */
 
 .hero .swiper {
   position: absolute;
@@ -602,14 +603,15 @@ p {
 
 .hero__slide picture img {
   width: 100%;
+  height: 100%;
 }
 
-.hero__contant {
+/* .hero__contant {
   max-width: 579px;
   height: auto;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .hero__title {
   font-family: "Open Sans";
@@ -636,7 +638,7 @@ p {
 
 .hero__btn {
   display: inline-block;
-  max-width: 254px;
+
   height: auto;
   font-weight: 700;
   font-size: 18px;
