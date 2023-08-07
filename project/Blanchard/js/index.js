@@ -26,6 +26,7 @@ const swiper = new Swiper('.hero__swiper', {
 document.addEventListener("DOMContentLoaded", () => {
 	let gallerySlider = new Swiper(".slides-container", {
 		slidesPerView: 1,
+
 		grid: {
 			rows: 1,
 			fill: "row"
@@ -41,15 +42,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		},
 
 		breakpoints: {
-			441: {
-				slidesPerView: 2,
+			300: {
+				slidesPerView: 1,
 				spaceBetween: 30
 			},
 
+			460: {
+				slidesPerView: 2,
+				spaceBetween: 35,
+
+			},
 			1200: {
+				slidesPerGroup: 2,
 				slidesPerView: 3,
-				spaceBetween: 50
-			}
+				spaceBetween: 34,
+			},
+
+
 		},
 
 		a11y: false,
