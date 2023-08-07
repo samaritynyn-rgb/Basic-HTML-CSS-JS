@@ -593,6 +593,7 @@ p {
   position: relative;
   overflow: hidden;
   word-wrap: break-word;
+  padding: 80px 0px 80px 10px;
 }
 
 .hero__container {
