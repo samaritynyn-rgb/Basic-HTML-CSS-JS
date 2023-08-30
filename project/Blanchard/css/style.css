@@ -1075,13 +1075,12 @@ p {
 }
 
 .catalog__paragraph {
-  margin-bottom: 0;
+  margin-bottom: 38px;
 }
 
 .catalog__main-content {
   display: flex;
   justify-content: space-between;
-  padding-top: 38px;
 }
 
 .catalog__left-content-one,
@@ -1509,8 +1508,8 @@ p {
 }
 
 #event-button-prev {
-  top: 50%;
-  left: -.1%;
+  top: 54%;
+  left: 0;
 }
 
 
@@ -1646,12 +1645,12 @@ p {
   display: none;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+/* .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: 40px;
-}
+  bottom: 0px;
+} */
 
 /*------------------------------------------------------section-project-------------------------------------------------*/
 .project {

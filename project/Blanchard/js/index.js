@@ -115,10 +115,15 @@ new Swiper('.event__swiper', {
 		clickable: true,
 	},
 	breakpoints: {
-		1024: {
+		1025: {
 			slidesPerView: 3,
 			slidesPerGroup: 2,
 			spaceBetween: 50,
+		},
+		1024: {
+			slidesPerView: 3,
+			slidesPerGroup: 2,
+			spaceBetween: 27,
 		},
 		510: {
 			slidesPerView: 2,
