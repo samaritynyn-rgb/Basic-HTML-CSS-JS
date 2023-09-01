@@ -855,6 +855,17 @@
 		bottom: 65%;
 	}
 
+	.btn__close svg {
+		width: 16px;
+		height: 16px;
+
+	}
+
+	.form__dec-search svg {
+		width: 17px;
+		height: 17px;
+	}
+
 	.hero__container {
 		padding: 75px 30px 45px 39px;
 	}
@@ -1003,7 +1014,7 @@
 
 	.catalog__container {
 		padding-top: 50px;
-		padding-bottom: 51px;
+		padding-bottom: 50px;
 	}
 
 	.catalog__main-content {
@@ -1024,7 +1035,7 @@
 	}
 
 	.catalog__item {
-		margin-bottom: 56px;
+		margin-bottom: 53px;
 	}
 
 	.catalog__item-top {
@@ -1034,6 +1045,7 @@
 
 	.catalog__item-bottom {
 		padding-top: 19px;
+		padding-bottom: 21px;
 	}
 
 	.catalog__item-btn {
@@ -1062,7 +1074,7 @@
 
 	.event {
 		padding-top: 0px;
-		padding-bottom: 68px;
+		padding-bottom: 67px;
 	}
 
 	.event__title {
@@ -1074,12 +1086,12 @@
 	}
 
 	.event__slider-content-wrap {
-		padding: 18px 16px 52px 22px;
+		padding: 18px 16px 50px 22px;
 		min-height: 485px;
 	}
 
 	.event__slider-content-span {
-		margin-bottom: 9px;
+		margin-bottom: 11px;
 	}
 
 	.event__slider-content-link {
@@ -1104,16 +1116,17 @@
 	}
 
 	.project__title {
-		margin-bottom: 10px;
+		margin-bottom: 12px;
 	}
 
 	.project__desc {
 		margin-top: 0;
-		margin-bottom: -16px;
+		margin-bottom: -19px;
 	}
 
 	.project__swiper-title {
 		font-size: 18px;
+		margin-top: 0;
 	}
 
 	.project__swiper-title {
@@ -1139,17 +1152,21 @@
 	}
 
 	.contacts__form {
-		margin-bottom: 20px;
+		margin-bottom: 22px;
+	}
+
+	.contacts__form-input {
+		width: 100%;
 	}
 
 	.contacts__name-wrap {
-		margin-bottom: 18px;
+		margin-bottom: 21px;
 	}
 
 	.contacts__name-title {
 		font-size: 18px;
 		line-height: 25px;
-		margin-bottom: 4px;
+		margin-bottom: 6px;
 	}
 
 	.contacts__name-address {
@@ -1178,12 +1195,21 @@
 		height: 50px;
 	}
 
+	#name,
+	#tel {
+		padding: 0px 105px 6px 23px;
+	}
+
+	#tel {
+		margin-bottom: 21px;
+	}
+
 	#map {
 		height: 320px;
 	}
 
 	.footer {
-		padding-top: 22px;
+		padding-top: 27px;
 		padding-bottom: 18px;
 	}
 
