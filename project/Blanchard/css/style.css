@@ -1859,16 +1859,7 @@ p {
   outline: none;
 }
 
-/* #project-button-next:focus:not(:hover):not(:active) svg,
-#project-button-prev:focus:not(:hover):not(:active) svg {
-  stroke: var(--BlueViolet);
-}
 
-#project-button-next:active svg,
-#project-button-prev:focus:active svg {
-  fill: var(--whiteViolet);
-  stroke: var(--darkVioler);
-} */
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -1879,6 +1870,12 @@ p {
 #project-button-prev.swiper-button-disabled {
   opacity: 0;
   cursor: auto;
+}
+
+#project-button-next.swiper-button-disabled,
+#project-button-prev.swiper-button-disabled {
+  opacity: 0.4;
+  color: var(--color-black-grey);
 }
 
 /*-----------------------------------------------section-contacts-------------------------------------------*/
