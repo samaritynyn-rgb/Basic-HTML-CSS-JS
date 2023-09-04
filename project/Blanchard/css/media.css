@@ -686,45 +686,59 @@
 		text-align: center;
 		align-items: center;
 		height: auto;
-	}
-
-	.hero__paragraph {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 16px;
-		margin-top: 0;
-	}
-
-	.hero__title {
-		font-size: 32px;
-		line-height: 38px;
-		margin-bottom: 12px;
+		margin: 0 auto;
 	}
 
 	.hero__container {
 		padding-top: 130px;
-		padding-bottom: 130px;
+		padding-bottom: 110px;
 	}
 
-	.hero__contant {
-		margin: 0 auto;
+
+
+	.hero__title {
+		font-size: 35px;
+		line-height: 38px;
+		margin-bottom: 24px;
+	}
+
+	.hero__paragraph {
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 16px;
+		margin-top: 0;
+		margin-bottom: 60px;
+	}
+
+	.hero__btn {
+		font-size: 15px;
+		line-height: 16px;
+		padding: 11px 16px 14px 19px;
+		max-width: inherit;
 	}
 
 	.hero__paragraph {
 		margin-bottom: 40px;
 	}
 
-	.hero__btn {
-		font-size: 12px;
-		line-height: 16px;
-		padding: 11px 16px 14px 19px;
-		max-width: 200px;
-	}
+
 
 	.about__container {
 		padding-top: 50px;
 		padding-bottom: 39px;
 	}
+
+	p {
+		font-size: 15px;
+		line-height: 22px;
+	}
+
+	h2 {
+		font-size: 38px;
+		line-height: 55px;
+	}
+
+
 
 	.gallery__wrapper-slide:active::before {
 		width: 290px;
@@ -758,10 +772,19 @@
 
 	#name {
 		margin-bottom: 20px;
+		padding-top: 6px;
+		padding-bottom: 6px;
 	}
 
 	#tel {
 		margin-bottom: 20px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	.contacts__form-btn {
+		font-size: 16px;
+		padding: 8px 18px 8px 18px;
 	}
 
 	#map {
@@ -867,7 +890,7 @@
 	}
 
 	.hero__container {
-		padding: 75px 30px 45px 39px;
+		padding: 75px 30px 44px 39px;
 	}
 
 	.hero__contant {
@@ -876,14 +899,20 @@
 
 	.hero__title {
 		max-width: 258px;
+		font-size: 32px;
 		line-height: 44px;
 		margin-bottom: 1px;
 	}
 
 	.hero__paragraph {
+		font-size: 12px;
 		max-width: 266px;
 		text-align: center;
 		margin-bottom: 42px;
+	}
+
+	.hero__btn {
+		font-size: 12px;
 	}
 
 
@@ -898,7 +927,7 @@
 
 	.about {
 		padding-top: 49px;
-		padding-bottom: 40px;
+		padding-bottom: 41px;
 	}
 
 	.about__desc {
@@ -939,7 +968,7 @@
 	}
 
 	.gallery__desc {
-		margin-bottom: 12px;
+		margin-bottom: 21px;
 	}
 
 	.main__custom-select {
