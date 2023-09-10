@@ -197,6 +197,10 @@ p {
   transition: 0.3s ease-in-out;
 }
 
+.header__top-btn-active {
+  display: none;
+}
+
 .header__top-btn-span {
   padding-left: 6px;
 }
@@ -766,10 +770,24 @@ p {
   flex-shrink: 0;
   width: 26px;
   height: 26px;
-  background-color: #527590;
+  background-color: var(--color-black-grey-grey);
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: all ease-in-out .4s;
+}
+
+.nav-btn:hover {
+  background-color: var(--BlueViolet);
+}
+
+.nav-btn:active {
+  outline: 2px solid var(--color-black-black);
+  background-color: var(--darkVioler);
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid var(--darkVioler);
 }
 
 .nav-btn::before {
@@ -1985,6 +2003,23 @@ input.valid.success-alert {
 }
 
 .contacts__form-btn:active {
+  color: var(--white);
+  border: 3px solid var(--whiteViolet);
+  background-color: var(--darkVioler);
+  color: var(--color-white);
+}
+
+.contacts__form-btn1:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
+}
+
+.contacts__form-btn1:hover {
+  color: var(--color-white);
+  background-color: var(--BlueViolet);
+}
+
+.contacts__form-btn1:active {
   color: var(--white);
   border: 3px solid var(--whiteViolet);
   background-color: var(--darkVioler);
