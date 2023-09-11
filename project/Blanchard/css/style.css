@@ -269,7 +269,7 @@ p {
 }
 
 .header__top-list:last-child {
-  margin-right: 421px;
+  margin-right: 360px;
 }
 
 .menu__list>li {
@@ -606,7 +606,7 @@ p {
 
 .hero__container {
   padding-top: 238px;
-  padding-bottom: 120px;
+  padding-bottom: 119px;
 }
 
 .hero .swiper {
@@ -639,7 +639,7 @@ p {
   line-height: 94px;
   color: var(--color-white);
   margin-top: 0;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 .hero__paragraph {
@@ -689,7 +689,7 @@ p {
 /* -----------------------------------------------about ------------------------------------------------------*/
 .about {
   padding-top: 80px;
-  padding-bottom: 70px;
+  padding-bottom: 71px;
   overflow: hidden;
 }
 
@@ -714,7 +714,7 @@ p {
   background-position: top center;
   background-size: cover;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 71px;
   overflow: hidden;
 }
 
@@ -755,12 +755,12 @@ p {
 .test-navigation {
   display: inline-flex;
   align-items: center;
-  padding-left: 14px;
-  padding-bottom: 28px;
+  padding-left: 5px;
+  padding-bottom: 25px;
 }
 
 .test-pagination {
-  margin-right: 10px;
+  margin-right: 21px;
   text-align: center;
   color: var(--color-white);
 }
@@ -768,8 +768,8 @@ p {
 .nav-btn {
   position: relative;
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   background-color: var(--color-black-grey-grey);
   border: none;
   border-radius: 50%;
@@ -806,7 +806,7 @@ p {
 }
 
 .test-prev {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .test-next::before {
@@ -1007,6 +1007,10 @@ p {
 }
 
 /*---check-box---*/
+.gallery__checkbox-wrapper {
+  padding-bottom: 10px;
+}
+
 .gallery__checkbox {
   position: relative;
   font: 400 15px/32px 'Open Sans';
@@ -1149,7 +1153,7 @@ p {
 }
 
 .catalog__left-content-one {
-  margin-right: 15px;
+  margin-right: 0px;
 }
 
 .catalog__right-content {
@@ -1693,6 +1697,10 @@ p {
   margin-bottom: 18px;
 }
 
+.project__desc-link-span1 {
+  display: none;
+}
+
 .project__desc-link {
   color: var(--BlueViolet);
 }
@@ -1802,7 +1810,7 @@ p {
 
 .project-next-btn {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 0;
   flex-shrink: 0;
   width: 30px;
@@ -1836,8 +1844,9 @@ p {
 
 .project-prev-btn {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 0;
+  left: 4px;
   flex-shrink: 0;
   width: 30px;
   height: 30px;
@@ -1907,7 +1916,7 @@ p {
   align-items: center;
   justify-content: space-between;
   padding-top: 25px;
-  padding-bottom: 31px;
+  padding-bottom: 35px;
 }
 
 .contacts__name-title {
@@ -1977,7 +1986,7 @@ input.valid.success-alert {
 
 .contacts__form-btn,
 .contacts__form-btn1 {
-  padding: 10px 36px;
+  padding: 8px 36px;
   height: auto;
   font: 700 18px/25px "Open Sans";
   color: var(--BlueViolet);
@@ -2037,7 +2046,7 @@ input.valid.success-alert {
 }
 
 .contacts__connection-desc {
-  margin-top: 14px;
+  padding-top: 11px;
   margin-bottom: 0;
   font: 600 24px/32px "Open Sans";
   color: var(--gray);

@@ -154,7 +154,7 @@ new Swiper('.project__swiper', {
 		},
 		1024: {
 			slidesPerView: 2,
-			spaceBetween: 20,
+			spaceBetween: 40,
 			slidesPerGroup: 2,
 		},
 
