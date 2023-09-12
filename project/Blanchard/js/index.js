@@ -8,21 +8,10 @@ const swiper = new Swiper('.hero__swiper', {
 		delay: 2000
 	},
 	effect: "fade",
-	//navigation: {
-	//	nextEl: ".swiper-button-next",
-	//	prevEl: ".swiper-button-prev"
-	//},
-	//pagination: {
-	//	el: '.swiper-bullet-pagination',
-	//	type: 'bullets',
-	//	clickable: true
-	//}
 })
 
 
 //-------------------------------------------------------gallery__slider
-
-
 document.addEventListener("DOMContentLoaded", () => {
 	let gallerySlider = new Swiper(".slides-container", {
 		slidesPerView: 1,
@@ -58,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				spaceBetween: 34,
 			},
 
-
 		},
 
 		a11y: false,
@@ -92,12 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				});
 			}
 		}
-
-
 	});
 });
-
-
 
 //----------------------------------------------------------------------------event__slider
 new Swiper('.event__swiper', {

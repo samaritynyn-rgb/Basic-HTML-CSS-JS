@@ -288,8 +288,6 @@
   opacity: 1;
 }
 
-
-
 .simplebar__item-link:active::after {
   opacity: 1;
 }

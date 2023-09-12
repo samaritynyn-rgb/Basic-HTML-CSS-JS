@@ -13,13 +13,6 @@ let activeMenu = document.querySelector('._active');
 resetMenu.addEventListener('click', function () {
 	activeMenu.classList.remove('_active');
 });
-console.log(activeMenu);
-
-
-
-// let resetBurger = document.querySelector('.menu__burger');
-
-
 let headBtn = document.querySelector('.header__search-button');
 let searchMenu = document.querySelector('.form__dec');
 let closeBtn = document.querySelector('.btn__close');
@@ -28,10 +21,6 @@ let searchWrap = document.querySelector('.header__search-wrap');
 let reset = document.querySelector('.header__logo');
 let resetBurger = document.querySelector('.menu__burger');
 let resetPlag = document.querySelector('.plag');
-
-
-
-
 
 headBtn.addEventListener('click', function () {
 	searchWrap.classList.add('un');
@@ -112,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.body.classList.remove('_lock');
 	})
 })
-
 
 //----------------------------------------------------------------------------------------------------dropdown-header
 document.addEventListener('DOMContentLoaded', () => {
