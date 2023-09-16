@@ -695,7 +695,7 @@ p {
 .gallery__desc {
   margin: 0;
   color: var(--color-white);
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 
 .gallery__label {
@@ -856,108 +856,125 @@ p {
 }
 
 /*---select---*/
-.is-selected {
-  display: none;
-}
-
-.main__custom-select {
-  position: relative;
-  border-radius: 10px 10px 10px 10px;
+.gallery__filter {
+  grid-area: filter;
   margin-bottom: auto;
-}
-
-.main__button {
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  width: 100%;
-  background: transparent;
-  border: 1px solid var(--color-grey-white-white);
-  border-radius: 6px;
-  padding: 1px 15px 2px 15px;
+  letter-spacing: 0.04em;
+  font-family: 'Open Sans';
   font-size: 16px;
-  line-height: 2em;
-  color: var(--color-white);
-  cursor: pointer;
-  z-index: 1;
-  transition: .4s;
+  left: 32px;
+  color: #fff;
 }
 
-.main__button:focus-visible {
-  outline: 1px solid var(--color-black-grey);
+.choices {
+  max-width: 400px;
+  margin-top: 17px;
+  letter-spacing: 0.003em;
+}
+
+.is-focused {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.main__button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.is-open {
+  background-color: transparent;
 }
 
-.main__button::after {
-  content: "";
-  position: absolute;
-  background-image: url("../img/menu_check-on.svg");
-  background-repeat: no-repeat;
-  width: 12px;
-  height: 8px;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.main__button--active {
-  background: transparent;
-}
-
-.main__button--active::after {
-  content: "";
-  position: absolute;
-  background-image: url("../img/white_check_off.svg");
-  background-repeat: no-repeat;
-  width: 12px;
-  height: 8px;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  transition: .4s;
-  pointer-events: none;
-}
-
-.main__button-list {
-  top: 40px;
-  left: 0;
-  width: 100%;
-  font-size: 16px;
-  line-height: 2em;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-.main__button-list--visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.main__button-item {
-  display: block;
-  color: var(--color-white);
-  border: 1px solid var(--color-black-grey);
+.choices__inner {
+  padding-top: 5px;
+  padding-left: 10px;
+  min-height: 40px;
+  font-size: inherit;
   border-radius: 6px;
-  padding-left: 13px;
-  padding-bottom: 4px;
-  opacity: 0.6;
-  transition: .4s;
+  border-color: #fff;
+  background-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 32px;
+  color: #fff;
 }
 
-.main__button-item:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2);
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  font-family: 'Open Sans';
+  font-size: 16px;
+  color: #fff;
 }
 
-.main__input-hidden {
+.choices__inner,
+.choices__list--dropdown,
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background: none;
+}
+
+.choices__list--dropdown {
+  margin-top: 0;
+  border-radius: 6px;
+}
+
+.choices__list--dropdown .choices__item {
+  padding-top: 9px;
+  padding-bottom: 11px;
+  padding-left: 19px;
+  font-size: inherit;
+}
+
+.choices__list .choices__item.is-selected {
   display: none;
+}
+
+.choices__list--dropdown .choices__item--selectable:after {
+  display: none;
+}
+
+.choices[data-type*=select-one]:after {
+  content: '';
+  height: 8px;
+  width: 8px;
+  top: 35%;
+  right: 4%;
+  margin-top: 1px;
+  border-color: #fff;
+  border-width: 1px;
+  border-right: none;
+  border-top: none;
+  transform: rotate(-45deg);
+  transition-property: border-color, transform;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.choices[data-type*=select-one].is-open:after {
+  margin-top: 5px;
+  border-color: #fff;
+  transform: rotate(135deg);
+}
+
+.choices[data-type*=select-one] .choices__inner {
+  padding-bottom: 6px;
+}
+
+.is-open .choices__inner {
+  border-radius: 6px;
+  border-color: #fff;
+}
+
+.is-open .choices__list--dropdown {
+  border-color: var(--color-black-grey-grey);
+  background-color: transparent;
+}
+
+.choices__list--dropdown .choices__item {
+  border-top: 1px solid #999;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.choices__inner:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /*---check-box---*/

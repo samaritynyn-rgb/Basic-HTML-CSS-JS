@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,600,700,italic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,600,700,italic" rel="stylesheet">
   <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/simplebar.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/simplebar.min.css">
+  <link rel="stylesheet" href="css/choices.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
@@ -47,7 +48,7 @@
                 </svg>
               </button>
               <form class="header__form-form">
-                <input type="text" placeholder="" class="header__form-input" />
+                <input type="text" placeholder="" class="header__form-input">
               </form>
               <button class="btn__close btn-reset"><svg width="23" height="23" viewbox="0 0 23 23" fill="none"
                   xmlns="http://www.w3.org/2000/svg" id="form__dec_close">
@@ -206,7 +207,7 @@
                   fill="white" />
               </svg>
             </button>
-            <input type="text" placeholder="Поиск по сайту" class="header__bottom-form-input" />
+            <input type="text" placeholder="Поиск по сайту" class="header__bottom-form-input">
           </form>
         </div>
       </div>
@@ -282,16 +283,13 @@
           <div class="content-wrap">
             <div class="gallery__content--left">
               <h2 class="gallery__desc">Галерея</h2>
-              <p class="gallery__label">Фильтр:</p>
-              <div class="main__custom-select">
-                <button class="main__button">Живопись</button>
-                <ul class="main__button-list">
-                  <li class="selected"><a class="main__button-item" data-value="1">Рисунок</a></li>
-                  <li class="selected1"><a class="main__button-item main__button-item1" data-value="2">Скульптура</a>
-                  </li>
-                </ul>
-                <input type="text" name="select" value="" class="main__input-hidden">
-              </div>
+              <label class="gallery__filter filter">Фильтр:
+                <select name="select" id="selectCustom" class="filter__select" aria-label="Фильтр по картинам">
+                  <option value="1">Живопись</option>
+                  <option value="2">Рисунок</option>
+                  <option value="3">Скульптура</option>
+                </select>
+              </label>
               <div class="gallery__checkbox-wrapper">
                 <div class="gallery__checkbox">
                   <label class="check__label">
@@ -872,7 +870,7 @@
           <form action="#" class="contacts__form" id="validate-form" autocomplete="off">
             <div class="form-wrap">
               <input type="text" class="contacts__form-input" placeholder="Имя*" autocomplete="off" name="name"
-                id="name" data-validate-field="name" />
+                id="name" data-validate-field="name">
             </div>
             <div class="form-wrap">
               <input name="tel" type="tel" placeholder="Телефон*" id="tel" class="contacts__form-input"
@@ -969,6 +967,7 @@
   <script src="js/jquery-ui.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
   <script src="js/jquery.validate.js"></script>
+  <script src="js/choices.min.js"></script>
   <script src="js/scrypt.js"></script>
   <script src="js/index.js"></script>
 </body>

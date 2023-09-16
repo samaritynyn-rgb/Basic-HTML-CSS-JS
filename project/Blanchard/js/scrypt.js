@@ -157,54 +157,11 @@ document.querySelectorAll(".simplebar").forEach(item => {
 })
 
 //-----------------------------------------------------------select------------------------
-const mainBtn = document.querySelector('.main__button');
-const mainBtnList = document.querySelector('.main__button-list');
-const mainBtnItem = mainBtnList.querySelectorAll('.main__button-item');
-const mainInput = document.querySelector('.main__input-hidden');
-//Клик по кнопке. Открыть/Закрыть select
-mainBtn.addEventListener('click', function () {
-	mainBtnList.classList.toggle('main__button-list--visible')
-	this.classList.add('main__button--active');
+const element = document.querySelector('#selectCustom');
+const choices = new Choices(element, {
+	searchEnabled: false,
+	shouldSort: false,
 });
-//Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
-// mainBtnItem.forEach(function (listItem) {
-// 	listItem.addEventListener('click', function (event) {
-// 		event.stopImmediatePropagation();
-// 		mainBtn.innerText = this.innerText;
-// 		mainBtn.focus()
-// 		mainInput.value = this.dataset.value;
-// 		mainBtnList.classList.remove('main__button-list--visible');
-// 	})
-// });
-//Клик снаружи дропдауна - закрыть дропдаун
-document.addEventListener('click', function (event) {
-	if (event.target !== document.querySelector('.main__button')) {
-		mainBtn.classList.remove('main__button--active');
-		mainBtnList.classList.remove('main__button-list--visible');
-	}
-});
-//Нажатие на Tab или Escape. Заклыть Дропдаун
-document.addEventListener('keydown', function (e) {
-	if (e.key === 'Tab' || e.key === 'Escape') {
-		mainBtn.classList.remove('main__button--active');
-		mainBtnList.classList.remove('main__button-list--visible');
-	}
-});
-
-let isSelect = document.querySelector('.main__button-item');
-let isSelectSel = document.querySelector('.main__button-item1');
-let isSel = document.querySelector('.selected');
-let isSelOne = document.querySelector('.selected1');
-
-
-isSelectSel.addEventListener('click', function () {
-	isSelOne.classList.add('is-selected');
-});
-isSelect.addEventListener('click', function () {
-	isSel.classList.add('is-selected');
-});
-
-
 //----------------------------------------------------------------------------------------------accordion
 $(function () {
 	$("#accordion").accordion({
