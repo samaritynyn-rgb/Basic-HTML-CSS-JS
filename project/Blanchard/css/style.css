@@ -977,6 +977,12 @@ p {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+  padding-left: 14px;
+}
+
 /*---check-box---*/
 .gallery__checkbox-wrapper {
   padding-bottom: 10px;

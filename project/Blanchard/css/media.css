@@ -308,6 +308,10 @@
 		height: 10px;
 	}
 
+	.check+.mark::before {
+		left: 34%;
+	}
+
 	.test-swiper {
 		padding-top: 24px;
 	}
